@@ -9,8 +9,12 @@ listLink.textContent = "Vegetables";
 listLink.href = "#vegetables";
 
 // The section #contact and #about are in the wrong order. Swap them.
-const main = document.getElementById("main").style.cssText 
+document.getElementById("main").style.cssText
     = "display: flex; flex-direction: column-reverse";
+
+
+// MÅSTE LIGGA OAVNFÖR ABOUTHEADER FÖR ATT INTE TA BORT ALLT! 
+document.getElementById("about").textContent = "";
 
 // Each section should have a h2 tag at the top with corresponding text according to its id
 const aboutHeader = document.createElement("h2");
@@ -22,10 +26,20 @@ contactHeader.textContent = "Contact";
 document.getElementById("contact").prepend(contactHeader);
 
 // The text "We're the best in fruits & vegetables" under #about should be wrapped in a p tag
-
+const newPTag = document.createElement("p");
+newPTag.textContent = "We're the best in fruits & vegetables";
+document.getElementById("about").appendChild(newPTag);
 
 // The developer used td elements in thead instead of th. Fix it.
+const newNameTh = document.createElement("th");
+newNameTh.textContent = "Name";
+document.querySelector("thead > tr")
+    .replaceChild(newNameTh, document.querySelector("thead > tr > td"));
 
+const newEmailTh = document.createElement("th");
+newEmailTh.textContent = "Email";
+document.querySelector("thead > tr")
+    .replaceChild(newEmailTh, document.querySelector("thead > tr > td"));
 
 // The developer forgot to include the main.css file. Add it to head.
 const cssLink = document.createElement("link");
