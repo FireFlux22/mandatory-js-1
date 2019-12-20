@@ -9,8 +9,11 @@ listLink.textContent = "Vegetables";
 listLink.href = "#vegetables";
 
 // The section #contact and #about are in the wrong order. Swap them.
-document.getElementById("main").style.cssText
-    = "display: flex; flex-direction: column-reverse";
+// document.getElementById("main").style.cssText
+//     = "display: flex; flex-direction: column-reverse";
+
+document.getElementById("main")
+    .insertBefore(document.getElementById("about"), document.getElementById("contact"));
 
 
 // MÅSTE LIGGA OAVNFÖR ABOUTHEADER FÖR ATT INTE TA BORT ALLT! 
